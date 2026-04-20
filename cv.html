@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marco Stefano Doria — CV</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #d95a10;
+      --black: #111111;
+      --dark: #333333;
+      --muted: #666666;
+      --border: #e0e0e0;
+      --bg: #ffffff;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #f4f4f4;
+      color: var(--black);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      background: var(--bg);
+      max-width: 760px;
+      margin: 2rem auto;
+      padding: 3rem 3.5rem;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.1);
+    }
+
+    .cv-header {
+      border-bottom: 2px solid var(--black);
+      padding-bottom: 1.1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .cv-name {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .cv-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .cv-contact a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .cv-section {
+      margin-bottom: 1.4rem;
+    }
+
+    .cv-section:last-child { margin-bottom: 0; }
+
+    .cv-section-title {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .cv-job {
+      margin-bottom: 1.1rem;
+    }
+
+    .cv-job:last-child { margin-bottom: 0; }
+
+    .cv-job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .cv-job-role {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .cv-job-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .cv-job-company {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+    }
+
+    .cv-job-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.28rem;
+    }
+
+    .cv-job-bullets li {
+      font-size: 0.81rem;
+      color: var(--dark);
+      line-height: 1.55;
+    }
+
+    .cv-bullet-dot {
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 0.35rem;
+      user-select: none;
+    }
+
+    .cv-skills {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .cv-skill-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .cv-skill-label {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .cv-skill-value {
+      color: var(--dark);
+    }
+
+    .cv-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media print {
+      body { background: white; font-size: 12px; }
+      .page {
+        margin: 0;
+        padding: 1.8cm 2cm;
+        box-shadow: none;
+        max-width: 100%;
+      }
+      .cv-name { font-size: 1.6rem; }
+      a { color: inherit !important; }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="cv-header">
+      <div class="cv-name">Marco Stefano Doria</div>
+      <div class="cv-title">Editorial Manager · Affiliate &amp; Performance Content</div>
+      <div class="cv-contact">
+        <span>marcostefanodoria@gmail.com</span>
+        <span>+39 328 241 8201</span>
+        <a href="https://linkedin.com/in/marcostefanodoria" target="_blank">linkedin.com/in/marcostefanodoria</a>
+        <span>Sicily, Italy — Remote</span>
+      </div>
+    </header>
+
+    <div class="cv-section">
+      <div class="cv-section-title">Experience</div>
+
+      <div class="cv-job">
+        <div class="cv-job-header">
+          <span class="cv-job-role">Affiliate Content Coordinator</span>
+          <span class="cv-job-date">2023 – Present</span>
+        </div>
+        <div class="cv-job-company">Blazemedia — Rome (Remote)</div>
+        <ul class="cv-job-bullets">
+          <li><span class="cv-bullet-dot">·</span>Lead editorial team with full ownership of hiring, onboarding, performance management, and quality standards</li>
+          <li><span class="cv-bullet-dot">·</span>Manage affiliate content operations across Amazon, eBay, and major tech retailers across VPN, telecom, and subscription verticals</li>
+          <li><span class="cv-bullet-dot">·</span>Oversee partner tracking and link management via Awin; coordinate with editorial, commercial, and tech teams to align content output with revenue goals</li>
+          <li><span class="cv-bullet-dot">·</span>Own deal selection strategy and content pipeline prioritization across multiple verticals</li>
+        </ul>
+      </div>
+
+      <div class="cv-job">
+        <div class="cv-job-header">
+          <span class="cv-job-role">Senior Editor</span>
+          <span class="cv-job-date">2019 – 2023</span>
+        </div>
+        <div class="cv-job-company">TechRadar Italia + Tom's Hardware — 3Labs SRL, Milan</div>
+        <ul class="cv-job-bullets">
+          <li><span class="cv-bullet-dot">·</span>Managed editorial affiliate partnerships with VPN providers, cloud services, and eLearning brands in one of the most competitive verticals in European tech media</li>
+          <li><span class="cv-bullet-dot">·</span>Produced buying guides, news articles, and SEO-driven content across high-traffic tech properties</li>
+          <li><span class="cv-bullet-dot">·</span>Built and executed editorial plans; coordinated with commercial teams on performance-driven content strategies</li>
+        </ul>
+      </div>
+
+      <div class="cv-job">
+        <div class="cv-job-header">
+          <span class="cv-job-role">Freelance Translator and Proofreader — EN to IT</span>
+          <span class="cv-job-date">2013 – 2021</span>
+        </div>
+        <div class="cv-job-company">IT, marketing, gaming, industrial — Remote</div>
+        <ul class="cv-job-bullets">
+          <li><span class="cv-bullet-dot">·</span>Delivered technical and marketing translations for Dell, Microsoft, Apple, Samsung, NetApp, and 888 Casino using SDL Trados, memoQ, and Passolo</li>
+          <li><span class="cv-bullet-dot">·</span>Contributed to the English edition of Hacklog vol. 1 (ethical hacking manual, Stefano Novelli)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-two-col">
+      <div>
+        <div class="cv-section">
+          <div class="cv-section-title">Skills</div>
+          <div class="cv-skills">
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">Affiliate</span>
+              <span class="cv-skill-value">Awin, deal management, partner tracking</span>
+            </div>
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">Analytics</span>
+              <span class="cv-skill-value">Google Analytics 4 (certified), Google Data Studio, SEOZoom, Search Console</span>
+            </div>
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">CMS</span>
+              <span class="cv-skill-value">WordPress, Vanilla CMS</span>
+            </div>
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">Content</span>
+              <span class="cv-skill-value">Editorial SEO, buying guides, editorial planning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="cv-section">
+          <div class="cv-section-title">Languages</div>
+          <div class="cv-skills">
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">Italian</span>
+              <span class="cv-skill-value">Native</span>
+            </div>
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">English</span>
+              <span class="cv-skill-value">C2 — operational, used professionally 10+ years</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <div class="cv-section-title">Education</div>
+          <div class="cv-skills">
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">2002 – 2006</span>
+              <span class="cv-skill-value">BA in Communication and Public Relations — University of Catania</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
