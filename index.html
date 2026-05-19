@@ -647,6 +647,12 @@
         opacity: 1; transform: none; animation: none; transition: none;
       }
     }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
   </style>
 </head>
 <body>
@@ -664,6 +670,8 @@
       <a href="cv.html" class="nav-cv" target="_blank">Download CV ↗</a>
     </div>
   </nav>
+
+  <main>
 
   <!-- HERO -->
   <div class="hero-wrap">
@@ -686,7 +694,7 @@
   </div>
 
   <!-- NUMBERS -->
-  <div class="container" id="numbers">
+  <section class="container" id="numbers" aria-label="By the numbers">
     <div class="section-label">By the numbers</div>
     <h2 class="section-title">Eight years. Here's what that looks like.</h2>
     <p class="section-sub">From newsroom to affiliate content ops to AI editorial systems.</p>
@@ -708,10 +716,10 @@
         <div class="stat-label">Google Analytics 4 certified — April 2026. Every content decision I make runs through data.</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- PITCH -->
-  <div class="container" id="pitch">
+  <section class="container" id="pitch" aria-label="Perspective">
     <div class="section-label">The perspective</div>
     <h2 class="section-title">What the publisher side teaches you.</h2>
     <p class="section-sub">Four years at TechRadar Italia and Tom's Hardware — not as a partner, as the publisher deciding which partners made the cut.</p>
@@ -730,7 +738,7 @@
         <div class="quote-source">Data-driven approach · GA4 certified</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!--
     =====================================================================
@@ -759,7 +767,7 @@
   -->
 
   <!-- 90 DAYS -->
-  <div class="container" id="90days">
+  <section class="container" id="90days" aria-label="First 90 days">
     <div class="section-label">The plan</div>
     <h2 class="section-title">First 90 days.</h2>
     <p class="section-sub">This is what a consulting engagement looks like. I don't arrive to observe. I arrive to work.</p>
@@ -793,10 +801,10 @@
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- EXPERIENCE -->
-  <div class="container" id="experience">
+  <section class="container" id="experience" aria-label="Background">
     <div class="section-label">Background</div>
     <h2 class="section-title">The track record.</h2>
     <p class="section-sub">Eight years of publisher-side experience, four in affiliate content operations.</p>
@@ -882,10 +890,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- WORK WITH ME -->
-  <div class="container" id="work">
+  <section class="container" id="work" aria-label="Work with me">
     <div class="section-label">Work with me</div>
     <h2 class="section-title">Human-led content operations, AI-augmented execution.</h2>
     <p class="section-sub">You set the direction. We run the operation. You receive the output.</p>
@@ -920,10 +928,10 @@
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- CONTACT -->
-  <div class="container" id="contact">
+  <section class="container" id="contact" aria-label="Contact">
     <div class="section-label">Contact</div>
     <h2 class="section-title">Let's talk.</h2>
     <p class="section-sub">Available for senior editorial leadership roles and consulting engagements. If you're building a content operation and need someone who has run one — let's talk.</p>
@@ -931,7 +939,9 @@
       <a href="https://www.linkedin.com/in/marcostefanodoria/" target="_blank" rel="noopener" class="btn-primary">Connect on LinkedIn ↗</a>
       <a href="cv.html" target="_blank" class="btn-ghost">Download CV ↗</a>
     </div>
-  </div>
+  </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
