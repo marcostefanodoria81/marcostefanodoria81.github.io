@@ -70,6 +70,23 @@
 
     .nav-link:hover { color: var(--white); }
 
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
     .nav-cv {
       font-size: 0.75rem;
       font-weight: 700;
@@ -230,7 +247,10 @@
   <nav>
     <a href="/" class="nav-logo">Marco Doria</a>
     <div class="nav-right">
-      <a href="/" class="nav-link">Home</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#work">Work with me</a></li>
+      </ul>
       <a href="cv.html" class="nav-cv" target="_blank">Download CV ↗</a>
     </div>
   </nav>
