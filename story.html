@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marco Doria — The Long Version</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #080808;
+      --dark: #101010;
+      --card: #141414;
+      --border: #242424;
+      --text: #d4d4d4;
+      --muted: #909090;
+      --accent: #ff6b1a;
+      --white: #ffffff;
+      --radius: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 54px;
+      background: rgba(8,8,8,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--white); }
+
+    .nav-cv {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(255,107,26,0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .nav-cv:hover { background: rgba(255,107,26,0.1); }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 7rem 2.5rem 5rem;
+    }
+
+    .page-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+      max-width: 560px;
+    }
+
+    .chapter {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter:last-of-type {
+      border-bottom: none;
+    }
+
+    .chapter-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .chapter-date {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .chapter-role {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .highlight {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .cta-section {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.85rem;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: border-color 0.2s;
+    }
+
+    .btn-ghost:hover { border-color: #383838; }
+
+    footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 1.25rem; }
+      main { padding: 5rem 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Marco Doria</a>
+    <div class="nav-right">
+      <a href="/" class="nav-link">Home</a>
+      <a href="cv.html" class="nav-cv" target="_blank">Download CV ↗</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-label">Background</div>
+    <h1>The long version.</h1>
+    <p class="intro">A CV tells you what I did. This tells you why it matters — and how it connects to what I do now.</p>
+
+    <div class="chapter">
+      <div class="chapter-meta">
+        <span class="chapter-date">2013 – 2019</span>
+        <span class="chapter-role">Freelance Translator · Proofreader</span>
+      </div>
+      <h2>Where it started: the discipline of precision.</h2>
+      <p>I spent six years translating and proofreading technical and marketing content for companies like Dell, Microsoft, Apple, Samsung, and NetApp. The work taught me something that sounds simple but isn't: <span class="highlight">words are load-bearing structures.</span> Every choice has a consequence. A mistranslation in a product manual costs money. An ambiguous sentence in a marketing campaign costs conversion.</p>
+      <p>The clients were large, the volumes were high, and the tolerance for error was low. I learned to work fast without getting sloppy, and to care about language as a functional tool, not just an expressive one.</p>
+      <p>This is where my editorial instinct was formed: not in a creative writing class, but in the discipline of making someone else's words work.</p>
+    </div>
+
+    <div class="chapter">
+      <div class="chapter-meta">
+        <span class="chapter-date">2019 – 2023</span>
+        <span class="chapter-role">Senior Editor · Two of Italy's most-read tech publications</span>
+      </div>
+      <h2>The publisher side: where content has to earn its place.</h2>
+      <p>I moved into editorial at two of Italy's most-read tech properties, managing affiliate content partnerships across VPN providers, cloud services, and eLearning brands. It was high-traffic publishing at scale, and the pressure was constant: <span class="highlight">every piece of content had a performance number attached to it.</span> Not the channel, not the month. The piece.</p>
+      <p>This changed how I think about content. In most organizations, content is measured by output — how many pieces were published, how many words were written. Here, it was measured by outcome. Did it rank? Did it convert? Did it justify the time it took to produce?</p>
+      <p>I was on the editorial side of the affiliate relationship — the team deciding which brands got covered and how, not the brands buying the coverage. That perspective taught me what separates content that earns its place from content that just fills a page. The difference is rarely about quality of writing. It's almost always about systems: how the brief is written, how the brief is researched, how the output is reviewed before it goes live.</p>
+    </div>
+
+    <div class="chapter">
+      <div class="chapter-meta">
+        <span class="chapter-date">2023 – Present</span>
+        <span class="chapter-role">Editorial Manager · Blazemedia</span>
+      </div>
+      <h2>Managing at scale: when one person's quality isn't enough.</h2>
+      <p>I moved into editorial management at Blazemedia, leading the affiliate content operation with full ownership of hiring, onboarding, quality standards, and delivery. For the first time, the output didn't depend on me — it depended on a team, and on the systems I built to make that team work.</p>
+      <p>This is where I understood, in practice, that content operations are a distinct discipline. It's not about being a better writer. It's about <span class="highlight">building the infrastructure that makes consistent quality possible at scale</span> — regardless of who is executing on any given day.</p>
+      <p>It's also where the limitations of manual processes become visible. When you're managing a team across verticals, the bottlenecks are always the same: brief quality, review cycles, unclear ownership, metrics that don't reflect what actually matters. The problems are structural, not individual.</p>
+    </div>
+
+    <div class="chapter">
+      <div class="chapter-meta">
+        <span class="chapter-date">2024 – 2026</span>
+        <span class="chapter-role">Builder · AI-Assisted Editorial Systems</span>
+      </div>
+      <h2>Building the tools: from observation to system.</h2>
+      <p>I started building. First a job market intelligence tool — a system that scans hiring signals before job postings go live, scores companies by their content ops pain, and surfaces the ones worth approaching. It runs every week and it's public on GitHub.</p>
+      <p>Then an editorial pipeline for my own content. A four-agent system that handles topic research, writing, editorial review, social distribution, and publication scheduling — end-to-end, with every step logged and measured. <span class="highlight">The same newsletter, produced in a fraction of the previous time, with consistent quality and measurable results.</span></p>
+      <p>Building these systems confirmed something I had suspected: the problems I was solving for myself were the same problems most content teams have. The gap isn't capability — it's infrastructure. Teams that have good writers but no system consistently underperform teams with average writers and a well-built system.</p>
+      <p>The data backed this up. The average B2B content cycle takes 326 days and involves 10 different stakeholders. 54% of companies that scaled AI content lost 30% or more of their organic traffic. More volume isn't the answer. A system that makes every piece earn its place is.</p>
+    </div>
+
+    <div class="chapter">
+      <div class="chapter-meta">
+        <span class="chapter-date">2026 – Present</span>
+        <span class="chapter-role">Consulting · Content Operations AI-Assisted</span>
+      </div>
+      <h2>The service: bringing the system to other companies.</h2>
+      <p>I now build and run AI-assisted content operations for SaaS and eCommerce companies. The work is the same as what I did for myself — audit the existing process, identify where quality drops and hours disappear, build the system that fixes it, and manage it directly.</p>
+      <p>Not an agency that writes content and hands it over. Not software you install and forget. A managed system: I build it, I run it, and I stay accountable for the results.</p>
+      <p>The entry point is a Content Ops Audit: a structured diagnosis of how the current operation works, where the gaps are, and what a 90-day roadmap to fix them looks like. From there, the engagement extends into building and managing the system.</p>
+      <p><span class="highlight">The background matters because it's not a theory — it's ten years of watching content operations work and fail, at scale, in real publishing environments.</span> I bring that to the companies I work with.</p>
+    </div>
+
+    <div class="cta-section">
+      <a href="https://calendly.com/marcostefanodoria/30min" target="_blank" rel="noopener" class="btn-primary">Book a 30-min call →</a>
+      <a href="/" class="btn-ghost">Back to home</a>
+      <a href="cv.html" target="_blank" class="btn-ghost">Download CV ↗</a>
+    </div>
+  </main>
+
+  <footer>
+    Marco Stefano Doria · Sicily, Italy · Remote-native · marcodoria.consulting
+  </footer>
+
+</body>
+</html>
