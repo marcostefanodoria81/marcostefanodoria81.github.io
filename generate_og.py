@@ -27,10 +27,10 @@ def load_font(size, bold=False):
                 continue
     return ImageFont.load_default()
 
-font_label = load_font(18)
+font_label = load_font(26)
 font_name  = load_font(72, bold=True)
 font_title = load_font(36)
-font_url   = load_font(22)
+font_url   = load_font(30)
 
 # dot + label
 dot_x, dot_y = PADDING, PADDING
