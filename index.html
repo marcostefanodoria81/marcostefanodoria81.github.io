@@ -658,6 +658,38 @@
       margin-top: 2rem;
     }
 
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .faq-a {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
     /* FOOTER */
     footer {
       max-width: 960px;
@@ -1031,6 +1063,52 @@
       <a href="https://calendly.com/marcostefanodoria/30min" target="_blank" rel="noopener" class="btn-primary">Book a 30-min call ↗</a>
       <a href="https://www.linkedin.com/in/marcostefanodoria/" target="_blank" rel="noopener" class="btn-ghost">Connect on LinkedIn ↗</a>
       <a href="cv.html" target="_blank" class="btn-ghost">View CV ↗</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container" id="faq" aria-label="Frequently asked questions">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Common questions.</h2>
+    <p class="section-sub">If you're considering working together, these are the questions that usually come up first.</p>
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <h3 class="faq-q">What is content operations consulting?</h3>
+        <p class="faq-a">Content operations consulting means auditing how a company produces and manages content — briefs, workflows, review cycles, measurement — and building the infrastructure to make that process consistent, faster, and measurable. It's not about writing content. It's about making the system that produces content work reliably at scale, without depending on any single person to hold it together.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">What does a Content Ops Audit include?</h3>
+        <p class="faq-a">A structured diagnosis of your current content workflow: how briefs are written, how content is reviewed, how output is measured, and where hours disappear. The deliverable is a written report with a prioritized gap analysis and a 90-day roadmap. Most audits run 2–3 weeks. The output is a document you can act on immediately — not a slide deck of observations.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">What is a fractional content operations manager?</h3>
+        <p class="faq-a">A fractional content operations manager is an experienced operations lead who works with your company part-time — typically 1–3 days per week — without the overhead of a full-time hire. You get the infrastructure built and managed by someone who has run content operations at scale, at a fraction of the cost of a full-time role. The engagement is scoped around specific outcomes, not hours.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">How long does an engagement typically take?</h3>
+        <p class="faq-a">The audit phase runs 2–3 weeks. A full build-and-manage engagement is typically structured in 90-day cycles — enough time to see whether the system produces measurable results. Most clients continue beyond the first cycle once the infrastructure is in place. There's no minimum commitment beyond the audit, but the system takes time to show its value.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Who is this for?</h3>
+        <p class="faq-a">SaaS and eCommerce companies that produce content consistently but can't trace it to revenue — and suspect the problem is in the process, not the writing. Typically: teams of 3–15 people, marketing leads who are managing content on top of everything else, and companies that have tried scaling content volume but seen quality drop. If every piece needs a senior person's eyes before it ships, the system is broken.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">What's the difference between content ops and content strategy?</h3>
+        <p class="faq-a">Content strategy defines what to produce and why — topics, audience, positioning. Content operations defines how to produce it consistently — workflows, brief standards, review processes, measurement. Most teams have opinions on strategy and almost no infrastructure for operations. The result is strategy that looks good in a doc and breaks the moment it needs to ship at scale. Operations is what makes strategy executable.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">How do we get started?</h3>
+        <p class="faq-a">Book a 30-minute call. I'll ask you about your current workflow, team structure, and where content feels broken. If there's a fit, I'll send a proposal within 48 hours. The audit is the standard entry point — it's scoped, time-limited, and gives you something concrete whether or not we continue. You can also connect on LinkedIn first if you'd prefer to keep it informal.</p>
+      </div>
+
     </div>
   </section>
 
