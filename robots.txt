@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /cv.html
+
+# AI search crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://marcodoria.consulting/sitemap.xml

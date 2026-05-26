@@ -18,10 +18,64 @@
   <link rel="canonical" href="https://marcodoria.consulting">
   <meta name="author" content="Marco Doria">
 
+  <!-- Open Graph image dimensions -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
   <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Marco Doria — AI-Assisted Content Operations">
   <meta name="twitter:description" content="I build and run content systems for SaaS and eCommerce brands — using AI tools I develop myself. Human-led operations, AI-augmented execution.">
+  <meta name="twitter:image" content="https://marcodoria.consulting/og-image.png">
+
+  <!-- Schema markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://marcodoria.consulting/#person",
+        "name": "Marco Doria",
+        "alternateName": "Marco Stefano Doria",
+        "jobTitle": "AI-Assisted Content Operations Consultant",
+        "url": "https://marcodoria.consulting",
+        "sameAs": [
+          "https://www.linkedin.com/in/marcostefanodoria/"
+        ],
+        "knowsAbout": ["Content Operations", "AI-Assisted Content", "Editorial Management", "SEO", "Content Strategy"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://marcodoria.consulting/#service",
+        "name": "Marco Doria — Content Operations Consulting",
+        "description": "AI-assisted content operations for SaaS and eCommerce. Human-led operations, AI-augmented execution.",
+        "url": "https://marcodoria.consulting",
+        "provider": { "@id": "https://marcodoria.consulting/#person" },
+        "areaServed": ["EU", "UK", "US", "AU"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Content Operations Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Ops Audit" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fractional Content Operations" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Intelligence" } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://marcodoria.consulting/#website",
+        "url": "https://marcodoria.consulting",
+        "name": "Marco Doria",
+        "description": "AI-assisted content operations consulting for SaaS and eCommerce."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff6b1a'/><text x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ178J7050"></script>
@@ -563,7 +617,7 @@
       border-top: 1px solid var(--border);
     }
 
-    .skill-group h4 {
+    .skill-group h3 {
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -887,7 +941,7 @@
 
     <div class="skills-grid">
       <div class="skill-group reveal">
-        <h4>Analytics & performance</h4>
+        <h3>Analytics & performance</h3>
         <div class="tag-list">
           <span class="tag">Awin</span>
           <span class="tag">Google Analytics 4 (certified)</span>
@@ -897,7 +951,7 @@
         </div>
       </div>
       <div class="skill-group reveal reveal-delay-1">
-        <h4>Content & CMS</h4>
+        <h3>Content & CMS</h3>
         <div class="tag-list">
           <span class="tag">WordPress</span>
           <span class="tag">Vanilla CMS</span>
@@ -907,7 +961,7 @@
         </div>
       </div>
       <div class="skill-group reveal reveal-delay-1">
-        <h4>AI & automation</h4>
+        <h3>AI & automation</h3>
         <div class="tag-list">
           <span class="tag">Anthropic Claude API</span>
           <span class="tag">Multi-agent systems</span>
@@ -916,7 +970,7 @@
         </div>
       </div>
       <div class="skill-group reveal reveal-delay-2">
-        <h4>Languages & Education</h4>
+        <h3>Languages & Education</h3>
         <div class="tag-list">
           <span class="tag">Italian — Native</span>
           <span class="tag">English — C2 operational</span>
@@ -986,7 +1040,8 @@
   <footer>
     <div class="footer-left">
       <strong>Marco Stefano Doria</strong><br>
-      Sicily, Italy · Remote-native · linkedin.com/in/marcostefanodoria
+      Sicily, Italy · Remote-native · linkedin.com/in/marcostefanodoria<br>
+      <span style="font-size:0.75rem;color:var(--muted);">Last updated: May 2026</span>
     </div>
   </footer>
 
