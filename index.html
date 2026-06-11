@@ -305,6 +305,42 @@
 
     .btn-ghost:hover { border-color: var(--border-hover); background: var(--card); }
 
+    .geo-callout {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.75rem;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius);
+      max-width: 720px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.65s forwards;
+    }
+
+    .geo-callout-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .geo-callout-text {
+      font-size: 0.95rem;
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    .geo-callout-text strong { color: var(--accent); }
+
+    .geo-callout-source {
+      margin-top: 0.6rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .geo-callout-source a { color: inherit; text-decoration: underline; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
@@ -814,6 +850,11 @@
         <div class="hero-cta">
           <a href="https://calendly.com/marcostefanodoria/30min" target="_blank" rel="noopener" class="btn-primary" onclick="gtag('event', 'calendly_click', {'button_location': 'hero'})">Book a 30-min call →</a>
           <a href="#work" class="btn-ghost">See how I work</a>
+        </div>
+        <div class="geo-callout">
+          <div class="geo-callout-label">Why now</div>
+          <div class="geo-callout-text">Gartner forecasts PR and earned media budgets will <strong>double by 2027</strong>, driven by AI/LLM adoption — and <strong>95% of links cited in AI answers</strong> already come from earned, shared, or organic content. The channel where editorial quality matters most is the one growing fastest.</div>
+          <div class="geo-callout-source">Source: Gartner forecast (PR/earned media budgets); link-citation data via vendor research cited by Gartner — <a href="https://communicateonline.me/news/ai-will-double-pr-budgets-and-replace-internal-channels-gartner-forecast/" target="_blank" rel="noopener">Communicate Online, Feb 2026</a></div>
         </div>
       </div>
     </div>
