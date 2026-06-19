@@ -85,6 +85,21 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff6b1a'/><text x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
 
+  <!-- Google Consent Mode v2 - default state (denied until user consents) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+
+  <!-- iubenda Privacy Controls and Cookie Solution -->
+  <script type="text/javascript" src="https://embeds.iubenda.com/widgets/7b5eb9c2-e52c-4a78-8c06-9414a7a4ae64.js"></script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ178J7050"></script>
   <script>
@@ -304,6 +319,18 @@
     }
 
     .btn-ghost:hover { border-color: var(--border-hover); background: var(--card); }
+
+    .floating-cta {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 95;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+    }
+
+    @media (max-width: 700px) {
+      .floating-cta { bottom: 1rem; right: 1rem; padding: 0.65rem 1.1rem; font-size: 0.8rem; }
+    }
 
     .geo-callout {
       margin-top: 2.5rem;
@@ -787,7 +814,8 @@
       nav { padding: 0 1rem; }
       .nav-links li { display: none; }
       .nav-links li:nth-last-child(1),
-      .nav-links li:nth-last-child(2) { display: block; }
+      .nav-links li:nth-last-child(2),
+      .nav-links li:nth-last-child(3) { display: block; }
       .nav-logo { display: none; }
       .nav-links { gap: 0.75rem; }
       .nav-links a { font-size: 0.68rem; letter-spacing: 0.04em; }
@@ -799,7 +827,7 @@
       .days-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
       .timeline-item { grid-template-columns: 70px 20px 1fr; gap: 0 0.75rem; }
-      footer { padding: 1.5rem 1.25rem; }
+      footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: center; text-align: center; justify-content: center; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -828,8 +856,9 @@
         <li><a href="#work">Work with me</a></li>
         <li><a href="story.html">My story</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="cv.html" target="_blank" onclick="gtag('event', 'cv_view', {'button_location': 'nav'})">CV ↗</a></li>
       </ul>
-      <a href="cv.html" class="nav-cv" target="_blank" onclick="gtag('event', 'cv_view', {'button_location': 'nav'})">View CV ↗</a>
+      <a href="#proof" class="nav-cv" onclick="gtag('event', 'proof_view', {'button_location': 'nav'})">See the proof</a>
     </div>
   </nav>
 
@@ -842,8 +871,8 @@
         <div class="hero-label">Content Operations · AI-Assisted Systems</div>
         <h1>The brief is the most expensive document<br>your team produces.<br><span>Almost no one treats it that way.</span></h1>
         <p class="hero-sub">
-          Most B2B SaaS and eCommerce companies have people who can write. What they're missing is a process that makes the work consistent, measurable, and scalable.
-          I build and run that system, using <strong>AI tools I develop myself</strong>, and stay on to manage it directly.
+          <strong>I build content operations that make your output consistent, measurable, and scalable</strong>, then run it for you using <strong>AI tools I develop myself</strong>.
+          Most B2B SaaS and eCommerce companies have people who can write. What they're missing is the system behind them.
           Not an agency that writes for you. Not software you install and forget.
           Ten years on the publisher side taught me what content needs to do to earn its place. I bring that to the companies I work with.
         </p>
@@ -859,6 +888,34 @@
       </div>
     </div>
   </div>
+
+  <!-- PROOF -->
+  <section class="container" id="proof" aria-label="Proof">
+    <div class="section-label">Proof, not theory</div>
+    <h2 class="section-title">I ran this audit on my own newsletter first.</h2>
+    <p class="section-sub">The Gentle Meeple: a real Content Operations Audit, 90 days of data, 8 posts, every number verified. Not a sample report, the actual output.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-num">Subscribers, 90 days</div>
+        <div class="stat-value">+54<span>.5%</span></div>
+        <div class="stat-label">Growth driven by a documented brief-to-distribution pipeline, not by volume.</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-num">Views, 90 days</div>
+        <div class="stat-value">+303<span>%</span></div>
+        <div class="stat-label">Tracked in GA4, with the same measurement system I build for clients.</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-num">Schedule adherence</div>
+        <div class="stat-value">8<span>/8</span></div>
+        <div class="stat-label">Zero missed posts in 8 weeks, the pipeline hasn't stalled once.</div>
+      </div>
+    </div>
+    <div class="contact-block reveal" style="margin-top: 2rem;">
+      <a href="case-study-gentle-meeple.html" class="btn-ghost" onclick="gtag('event', 'case_study_view', {'button_location': 'proof_section'})">Read the full audit ↗</a>
+    </div>
+  </section>
 
   <!-- WHY IT MATTERS -->
   <section class="container" id="why" aria-label="Why it matters">
@@ -1155,6 +1212,11 @@
       </div>
 
       <div class="faq-item">
+        <h3 class="faq-q">How do you handle our content and data when using AI agents?</h3>
+        <p class="faq-a">The agents I use are tools I build and run myself, not third-party software with its own data policy. They operate only on the content and workflows you give me access to, and every output goes through human review before it ships. AI handles the system. I handle the judgment, and the accountability for what goes out under your name.</p>
+      </div>
+
+      <div class="faq-item">
         <h3 class="faq-q">How do we get started?</h3>
         <p class="faq-a">Book a 30-minute call. I'll ask you about your current workflow, team structure, and where content feels broken. If there's a fit, I'll send a proposal within 48 hours. The audit is the standard entry point: it's scoped, time-limited, and gives you something concrete whether or not we continue. You can also connect on LinkedIn first if you'd prefer to keep it informal.</p>
       </div>
@@ -1168,10 +1230,14 @@
   <footer>
     <div class="footer-left">
       <strong>Marco Stefano Doria</strong><br>
-      Sicily, Italy · Remote-native · linkedin.com/in/marcostefanodoria<br>
-      <span style="font-size:0.75rem;color:var(--muted);">Last updated: May 2026</span>
+      Sicily, Italy · Remote-native<br>
+      <span style="font-size:0.75rem;color:var(--muted);">Last updated: June 2026</span><br>
+      <span style="font-size:0.75rem;"><a href="https://www.iubenda.com/privacy-policy/93666200" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:underline;">Privacy Policy</a> · <a href="https://www.iubenda.com/privacy-policy/93666200/cookie-policy" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:underline;">Cookie Policy</a> · <a href="#" onclick="_iub.cs.api.openPreferences(); return false;" style="color:var(--muted);text-decoration:underline;">Cookie preferences</a></span>
     </div>
+    <a href="https://www.linkedin.com/in/marcostefanodoria/" target="_blank" rel="noopener" class="btn-ghost" onclick="gtag('event', 'linkedin_click', {'button_location': 'footer'})">Connect on LinkedIn ↗</a>
   </footer>
+
+  <a href="https://calendly.com/marcostefanodoria/30min" target="_blank" rel="noopener" class="btn-primary floating-cta" onclick="gtag('event', 'calendly_click', {'button_location': 'floating'})">Book a call →</a>
 
   <script>
     const observer = new IntersectionObserver((entries) => {

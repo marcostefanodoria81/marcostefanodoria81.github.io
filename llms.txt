@@ -11,11 +11,12 @@
 ## Background
 
 - [The full story](https://marcodoria.consulting/story.html): Ten years in content — from translation to publisher-side editorial to AI-assisted content operations.
+- [Content Operations Audit: The Gentle Meeple](https://marcodoria.consulting/case-study-gentle-meeple.html): A real audit run on my own newsletter — 90 days of data, 8 posts, full pipeline from brief to distribution. Every number verified.
 
 ## Key facts
 
 - 10+ years in performance content: translation, editorial management, affiliate content ops, AI-augmented systems
-- Positioning: "Your content team isn't the problem. The system is."
+- Positioning: "The brief is the most expensive document your team produces. Almost no one treats it that way."
 - ICP: SaaS and eCommerce companies, 20–200 people, growth stage
 - Entry point: Content Ops Audit (€500–1,200)
 - Proof of work: job-search-agent (GitHub, live since April 2026), Gentle Meeple AI editorial pipeline

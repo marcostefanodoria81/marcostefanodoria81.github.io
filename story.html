@@ -16,6 +16,21 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://marcodoria.consulting/og-image.png">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff6b1a'/><text x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
+  <!-- Google Consent Mode v2 - default state (denied until user consents) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+
+  <!-- iubenda Privacy Controls and Cookie Solution -->
+  <script type="text/javascript" src="https://embeds.iubenda.com/widgets/7b5eb9c2-e52c-4a78-8c06-9414a7a4ae64.js"></script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ178J7050"></script>
   <script>
@@ -257,6 +272,11 @@
       border-top: 1px solid var(--border);
       font-size: 0.82rem;
       color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
     }
 
     @media (max-width: 700px) {
@@ -353,7 +373,11 @@
   </main>
 
   <footer>
-    Marco Stefano Doria · Sicily, Italy · Remote-native · marcodoria.consulting
+    <div>
+      Marco Stefano Doria · Sicily, Italy · Remote-native · marcodoria.consulting<br>
+      <span style="font-size:0.75rem;"><a href="https://www.iubenda.com/privacy-policy/93666200" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Privacy Policy</a> · <a href="https://www.iubenda.com/privacy-policy/93666200/cookie-policy" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Cookie Policy</a> · <a href="#" onclick="_iub.cs.api.openPreferences(); return false;" style="color:inherit;text-decoration:underline;">Cookie preferences</a></span>
+    </div>
+    <a href="https://www.linkedin.com/in/marcostefanodoria/" target="_blank" rel="noopener" class="btn-ghost" onclick="gtag('event', 'linkedin_click', {'button_location': 'footer'})">Connect on LinkedIn ↗</a>
   </footer>
 
 </body>
