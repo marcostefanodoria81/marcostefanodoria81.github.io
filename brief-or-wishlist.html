@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brief or wishlist? — Marco Doria</title>
+  <meta name="description" content="10 questions to find out if your content team is working from real briefs or dressed-up wishlists. A diagnostic for content leaders.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marcodoria.consulting/brief-or-wishlist">
+  <meta property="og:title" content="Brief or wishlist? 10 questions to find out">
+  <meta property="og:description" content="A diagnostic for content leaders. 10 questions to find out if your team is working from real briefs or dressed-up wishlists.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://marcodoria.consulting/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brief or wishlist? 10 questions to find out">
+  <meta name="twitter:description" content="A diagnostic for content leaders. 10 questions to find out if your team is working from real briefs or dressed-up wishlists.">
+  <meta name="twitter:image" content="https://marcodoria.consulting/og-image.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://marcodoria.consulting/brief-or-wishlist">
+
+  <meta name="author" content="Marco Doria">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff6b1a'/><text x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
+
+  <!-- Google Consent Mode v2 - default state (denied until user consents) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+
+  <!-- iubenda Privacy Controls and Cookie Solution -->
+  <script type="text/javascript" src="https://embeds.iubenda.com/widgets/7b5eb9c2-e52c-4a78-8c06-9414a7a4ae64.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ178J7050"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WJ178J7050');
+  </script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap">
+
+  <style>
+    :root {
+      --bg: #F7F6F3;
+      --surface: #FFFFFF;
+      --text-primary: #181816;
+      --text-secondary: #7A7A75;
+      --accent: #1D4F91;
+      --accent-light: #EAF0F9;
+      --divider: #E5E4DF;
+      --score-a: #1A6B3C;
+      --score-b: #8B6014;
+      --score-c: #8B2020;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #141413;
+        --surface: #1E1E1C;
+        --text-primary: #F0EFE9;
+        --text-secondary: #9B9B93;
+        --accent: #4A8FE8;
+        --accent-light: #172033;
+        --divider: #2C2C29;
+        --score-a: #4DB877;
+        --score-b: #D4A84B;
+        --score-c: #E07070;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #141413;
+      --surface: #1E1E1C;
+      --text-primary: #F0EFE9;
+      --text-secondary: #9B9B93;
+      --accent: #4A8FE8;
+      --accent-light: #172033;
+      --divider: #2C2C29;
+      --score-a: #4DB877;
+      --score-b: #D4A84B;
+      --score-c: #E07070;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 15px;
+      line-height: 1.6;
+      padding-block: 40px;
+      padding-inline: 20px;
+    }
+
+    .document {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--surface);
+      padding: 56px 64px;
+      border: 1px solid var(--divider);
+    }
+
+    .doc-header {
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--text-primary);
+    }
+
+    .doc-eyebrow {
+      font-size: 10.5px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .doc-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.08;
+      color: var(--text-primary);
+      text-wrap: balance;
+      margin-bottom: 8px;
+    }
+
+    .doc-title em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .doc-subtitle {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .doc-intro {
+      margin-bottom: 32px;
+    }
+
+    .doc-intro p {
+      font-size: 14px;
+      margin-bottom: 10px;
+      max-width: 56ch;
+    }
+
+    .doc-intro p:last-child {
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .section-letter {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--surface);
+      background: var(--text-primary);
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 10.5px;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .questions {
+      list-style: none;
+    }
+
+    .question-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--divider);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.12s, padding 0.12s, margin 0.12s;
+      border-radius: 2px;
+    }
+
+    .question-item:last-child {
+      border-bottom: none;
+    }
+
+    .question-item:hover {
+      background: var(--accent-light);
+      padding-inline: 10px;
+      margin-inline: -10px;
+    }
+
+    .q-number {
+      font-size: 10.5px;
+      color: var(--text-secondary);
+      font-variant-numeric: tabular-nums;
+      min-width: 20px;
+      margin-top: 3px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .q-checkbox {
+      width: 15px;
+      height: 15px;
+      border: 1.5px solid var(--divider);
+      border-radius: 2px;
+      flex-shrink: 0;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .q-checkbox.checked {
+      background: var(--score-a);
+      border-color: var(--score-a);
+    }
+
+    .q-checkbox.checked::after {
+      content: '';
+      width: 7px;
+      height: 4px;
+      border-left: 1.5px solid white;
+      border-bottom: 1.5px solid white;
+      transform: rotate(-45deg) translateY(-1px);
+      display: block;
+    }
+
+    .q-text {
+      font-size: 13.5px;
+      line-height: 1.55;
+      flex: 1;
+      transition: color 0.15s;
+    }
+
+    .question-item.is-checked .q-text {
+      color: var(--score-a);
+    }
+
+    .score-counter {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0;
+      padding: 14px 18px;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+    }
+
+    .score-counter-label {
+      font-size: 11px;
+      color: var(--text-secondary);
+      flex: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+
+    .score-display {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+
+    .score-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+
+    .score-denom {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 28px 0;
+    }
+
+    .score-bands {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .score-band {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .band-range {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 15px;
+      font-weight: 600;
+      min-width: 40px;
+      padding-top: 1px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .band-range.high { color: var(--score-a); }
+    .band-range.mid  { color: var(--score-b); }
+    .band-range.low  { color: var(--score-c); }
+
+    .band-text {
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .band-label {
+      font-weight: 500;
+      display: block;
+    }
+
+    .band-sub {
+      color: var(--text-secondary);
+      font-size: 13px;
+      display: block;
+    }
+
+    .doc-closing p {
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin-bottom: 10px;
+      max-width: 54ch;
+    }
+
+    .doc-closing p:last-child { margin-bottom: 0; }
+
+    .doc-footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--divider);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .doc-author {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .doc-author strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .doc-author a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .doc-author a:hover {
+      text-decoration: underline;
+    }
+
+    .page-footer {
+      max-width: 680px;
+      margin: 24px auto 0;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .page-footer a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .document { padding: 36px 28px; }
+      .doc-title { font-size: 30px; }
+    }
+
+    @media (max-width: 480px) {
+      .document { padding: 28px 18px; }
+      .doc-title { font-size: 26px; }
+      .score-number { font-size: 24px; }
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .document { border: none; padding: 0; max-width: 100%; }
+      .page-footer { display: none; }
+      .question-item:hover {
+        background: transparent;
+        padding-inline: 0;
+        margin-inline: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .question-item, .q-checkbox, .q-text, .score-number { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="document">
+  <header class="doc-header">
+    <div class="doc-eyebrow">Content Operations Diagnostic</div>
+    <h1 class="doc-title">Brief <em>or</em> wishlist?</h1>
+    <div class="doc-subtitle">10 questions to find out</div>
+  </header>
+
+  <div class="doc-intro">
+    <p>Most teams think they are working from briefs. Most of the time, they are not. They are working from requests dressed up as briefs: a topic, a format, a vague sense of what "good" looks like.</p>
+    <p>A brief is a governance tool. A wishlist is a request. The difference is whether the document tells your team what success looks like before anyone writes a word.</p>
+    <p>Answer these 10 questions honestly. Count your yes answers.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">
+      <div class="section-letter">A</div>
+      <div class="section-title">Definition of done</div>
+    </div>
+    <ul class="questions">
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">01</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">When you assign a piece, does the writer know exactly when to consider it finished?</span>
+      </li>
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">02</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">Is there a success criterion written in the brief, not just in the manager's head?</span>
+      </li>
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">03</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">If two different writers read this brief, would they produce something similar, or something completely different?</span>
+      </li>
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">04</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">Do you have a written standard for "this is not publishable" before the piece is written?</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-label">
+      <div class="section-letter">B</div>
+      <div class="section-title">Scope and context</div>
+    </div>
+    <ul class="questions">
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">05</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">Does the brief name a specific target reader with a specific problem, not just "our ICP" or "our audience"?</span>
+      </li>
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">06</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">Does the brief say what NOT to include, not just what to include?</span>
+      </li>
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">07</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">Are reference materials (data, examples, sources) attached to the brief, or left for the writer to find?</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-label">
+      <div class="section-letter">C</div>
+      <div class="section-title">Scale and system</div>
+    </div>
+    <ul class="questions">
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">08</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">Would this brief work if a writer you have never met used it, with no one available to answer questions?</span>
+      </li>
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">09</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">If your best writer left tomorrow, could their replacement use the same brief without a drop in quality?</span>
+      </li>
+      <li class="question-item" onclick="toggle(this)">
+        <span class="q-number">10</span>
+        <span class="q-checkbox"></span>
+        <span class="q-text">Do you have a process for updating the brief when a piece fails, or does every post-mortem stay in the manager's head?</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="score-counter">
+    <span class="score-counter-label">Your score</span>
+    <div class="score-display">
+      <span class="score-number" id="score-num">0</span>
+      <span class="score-denom">/ 10</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="score-bands">
+    <div class="score-band">
+      <span class="band-range high">8–10</span>
+      <div class="band-text">
+        <span class="band-label">You have an operational brief.</span>
+        <span class="band-sub">Your system scales.</span>
+      </div>
+    </div>
+    <div class="score-band">
+      <span class="band-range mid">5–7</span>
+      <div class="band-text">
+        <span class="band-label">You have a hybrid brief.</span>
+        <span class="band-sub">It holds as long as the team is stable. It will not hold under pressure.</span>
+      </div>
+    </div>
+    <div class="score-band">
+      <span class="band-range low">0–4</span>
+      <div class="band-text">
+        <span class="band-label">You have a wishlist.</span>
+        <span class="band-sub">Quality depends on who interprets it, not on the process.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-closing">
+    <p>If most of your answers landed in the 0-4 zone, you are not alone. Brief quality is the most underdiagnosed problem in content operations. It tends to stay invisible until something goes wrong.</p>
+    <p>If you want to talk through what fixing it looks like in practice, reply to this message and we will figure out if a conversation makes sense.</p>
+  </div>
+
+  <footer class="doc-footer">
+    <div class="doc-author">
+      <strong>Marco Doria</strong> — <a href="https://marcodoria.consulting" target="_blank" rel="noopener">Content Operations</a>
+    </div>
+  </footer>
+</div>
+
+<div class="page-footer">
+  <a href="https://www.iubenda.com/privacy-policy/93666200" target="_blank" rel="noopener">Privacy Policy</a> &middot;
+  <a href="https://www.iubenda.com/privacy-policy/93666200/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a> &middot;
+  <a href="#" onclick="_iub.cs.api.openPreferences(); return false;">Cookie preferences</a>
+</div>
+
+<script>
+  const scoreEl = document.getElementById('score-num');
+
+  function toggle(item) {
+    const cb = item.querySelector('.q-checkbox');
+    const checked = cb.classList.toggle('checked');
+    item.classList.toggle('is-checked', checked);
+    updateScore();
+  }
+
+  function updateScore() {
+    const count = document.querySelectorAll('.q-checkbox.checked').length;
+    scoreEl.textContent = count;
+    if (count >= 8) {
+      scoreEl.style.color = 'var(--score-a)';
+    } else if (count >= 5) {
+      scoreEl.style.color = 'var(--score-b)';
+    } else {
+      scoreEl.style.color = 'var(--accent)';
+    }
+    if (count === 10) {
+      gtag('event', 'checklist_completed', { 'score': count });
+    }
+  }
+</script>
+
+</body>
+</html>
