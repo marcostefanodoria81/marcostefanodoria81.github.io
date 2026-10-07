@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Brief — Marco Doria</title>
+  <meta name="description" content="Get a free AI-generated research brief on any content operations topic. Delivered to your inbox in under a minute.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marcodoria.consulting/research-brief">
+  <meta property="og:title" content="Free AI research brief — Marco Doria">
+  <meta property="og:description" content="Enter a topic. Get a structured research brief: current state, market gap, key claims, content skeleton, and sources. Free. In under a minute.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://marcodoria.consulting/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free AI research brief — Marco Doria">
+  <meta name="twitter:description" content="Enter a topic. Get a structured research brief delivered to your inbox in under a minute.">
+  <meta name="twitter:image" content="https://marcodoria.consulting/og-image.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://marcodoria.consulting/research-brief">
+
+  <meta name="author" content="Marco Doria">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231D4F91'/><text x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='white'>R</text></svg>">
+
+  <!-- Google Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+
+  <!-- iubenda Privacy Controls -->
+  <script type="text/javascript" src="https://embeds.iubenda.com/widgets/7b5eb9c2-e52c-4a78-8c06-9414a7a4ae64.js"></script>
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ178J7050"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WJ178J7050');
+  </script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap">
+
+  <style>
+    :root {
+      --bg: #F7F6F3;
+      --surface: #FFFFFF;
+      --text-primary: #181816;
+      --text-secondary: #7A7A75;
+      --accent: #1D4F91;
+      --accent-light: #EAF0F9;
+      --accent-hover: #163B6E;
+      --divider: #E5E4DF;
+      --input-border: #C8C7C0;
+      --input-focus: #1D4F91;
+      --success-bg: #EAF4EE;
+      --success-text: #1A6B3C;
+      --error-bg: #FDF0F0;
+      --error-text: #8B2020;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #141413;
+        --surface: #1E1E1C;
+        --text-primary: #F0EFE9;
+        --text-secondary: #9B9B93;
+        --accent: #4A8FE8;
+        --accent-light: #172033;
+        --accent-hover: #6BA5EE;
+        --divider: #2A2A27;
+        --input-border: #3A3A37;
+        --input-focus: #4A8FE8;
+        --success-bg: #0F2A1A;
+        --success-text: #5DBF84;
+        --error-bg: #2A0F0F;
+        --error-text: #E08080;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #141413;
+      --surface: #1E1E1C;
+      --text-primary: #F0EFE9;
+      --text-secondary: #9B9B93;
+      --accent: #4A8FE8;
+      --accent-light: #172033;
+      --accent-hover: #6BA5EE;
+      --divider: #2A2A27;
+      --input-border: #3A3A37;
+      --input-focus: #4A8FE8;
+      --success-bg: #0F2A1A;
+      --success-text: #5DBF84;
+      --error-bg: #2A0F0F;
+      --error-text: #E08080;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      padding-inline: 16px;
+      padding-block: 48px;
+    }
+
+    .page {
+      max-width: 640px;
+      margin-inline: auto;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      margin-block-end: 40px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-block-end: 12px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-block-end: 16px;
+    }
+
+    h1 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .lede {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ── What you get ── */
+    .sections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-block: 32px;
+    }
+
+    .section-chip {
+      background: var(--surface);
+      border: 1px solid var(--divider);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .chip-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      display: block;
+      margin-block-end: 4px;
+    }
+
+    .chip-desc {
+      font-size: 13px;
+      color: var(--text-primary);
+    }
+
+    /* ── Form ── */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--divider);
+      border-radius: 12px;
+      padding: 32px;
+      margin-block: 32px;
+    }
+
+    .form-group {
+      margin-block-end: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-block-end: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--input-border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 15px;
+      padding: 10px 14px;
+      transition: border-color 0.15s;
+      outline: none;
+    }
+
+    input[type="email"]:focus,
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: var(--input-focus);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--input-focus) 15%, transparent);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .input-hint {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-block-start: 6px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: background 0.15s, opacity 0.15s;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--accent-hover);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* ── States ── */
+    .state { display: none; }
+    .state.active { display: block; }
+
+    /* Loading */
+    .loading-wrap {
+      text-align: center;
+      padding-block: 32px;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--divider);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-inline: auto;
+      margin-block-end: 16px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .loading-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .loading-steps {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-block-start: 8px;
+      min-height: 18px;
+    }
+
+    /* Success / Error */
+    .notice {
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 14px;
+      margin-block: 16px;
+    }
+
+    .notice.success {
+      background: var(--success-bg);
+      color: var(--success-text);
+    }
+
+    .notice.error {
+      background: var(--error-bg);
+      color: var(--error-text);
+    }
+
+    /* ── Report display ── */
+    .report-card {
+      background: var(--surface);
+      border: 1px solid var(--divider);
+      border-radius: 12px;
+      padding: 32px;
+      margin-block-start: 24px;
+    }
+
+    .report-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-block-end: 8px;
+    }
+
+    .report-topic {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-block-end: 24px;
+      line-height: 1.3;
+    }
+
+    .report-section {
+      margin-block-end: 28px;
+    }
+
+    .report-section-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-block-end: 10px;
+      padding-block-end: 6px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .report-section p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text-primary);
+    }
+
+    .claim-item {
+      border-left: 3px solid var(--accent-light);
+      padding-inline-start: 14px;
+      margin-block-end: 14px;
+    }
+
+    .claim-text { font-size: 14px; line-height: 1.55; }
+
+    .claim-meta {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-block-start: 4px;
+    }
+
+    .claim-meta a { color: var(--accent); text-decoration: none; }
+    .claim-meta a:hover { text-decoration: underline; }
+
+    .confidence {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: var(--accent-light);
+      color: var(--accent);
+      margin-inline-start: 4px;
+    }
+
+    .skeleton-h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-block-end: 16px;
+      line-height: 1.35;
+    }
+
+    .skeleton-section {
+      margin-block-end: 16px;
+    }
+
+    .skeleton-heading {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-block-end: 6px;
+    }
+
+    .skeleton-points {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skeleton-points li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding-inline-start: 14px;
+      position: relative;
+      margin-block-end: 3px;
+    }
+
+    .skeleton-points li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+    }
+
+    .source-item {
+      margin-block-end: 10px;
+    }
+
+    .source-item a {
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .source-item a:hover { text-decoration: underline; }
+
+    .source-reliability {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-block-start: 2px;
+    }
+
+    /* ── CTA ── */
+    .cta-block {
+      background: var(--accent-light);
+      border-radius: 10px;
+      padding: 24px;
+      margin-block-start: 32px;
+      text-align: center;
+    }
+
+    .cta-block p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-block-end: 16px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .run-again {
+      text-align: center;
+      margin-block-start: 20px;
+    }
+
+    .run-again button {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .run-again button:hover { color: var(--accent); }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-block-start: 48px;
+      padding-block-start: 24px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .page-footer a { color: var(--text-secondary); }
+    .page-footer a:hover { color: var(--accent); }
+
+    .back-link {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-block-end: 32px;
+    }
+
+    .back-link:hover { color: var(--accent); }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <a class="back-link" href="https://marcodoria.consulting">← marcodoria.consulting</a>
+
+  <header class="page-header">
+    <div class="eyebrow">Content Operations Tool</div>
+    <h1>A research brief on <em>any</em> content ops topic. Free.</h1>
+    <p class="lede">Enter a topic. In under a minute you get a structured brief: what is happening now, what is missing from existing content, and a ready skeleton to build from.</p>
+  </header>
+
+  <div class="sections-grid">
+    <div class="section-chip">
+      <span class="chip-label">01</span>
+      <span class="chip-desc">Topic snapshot + why it matters now</span>
+    </div>
+    <div class="section-chip">
+      <span class="chip-label">02</span>
+      <span class="chip-desc">3–5 verifiable claims with sources</span>
+    </div>
+    <div class="section-chip">
+      <span class="chip-label">03</span>
+      <span class="chip-desc">Market gap analysis</span>
+    </div>
+    <div class="section-chip">
+      <span class="chip-label">04</span>
+      <span class="chip-desc">Content skeleton (H1 + H2s)</span>
+    </div>
+    <div class="section-chip">
+      <span class="chip-label">05</span>
+      <span class="chip-desc">Source map with reliability notes</span>
+    </div>
+  </div>
+
+  <!-- Form state -->
+  <div id="state-form" class="state active">
+    <div class="form-card">
+      <form id="brief-form" novalidate>
+        <div class="form-group">
+          <label for="topic">Topic</label>
+          <textarea id="topic" name="topic" placeholder="e.g. content brief quality metrics for SaaS content teams" rows="2"></textarea>
+          <p class="input-hint">Any content operations or content marketing topic. The more specific, the more useful the brief.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email">
+          <p class="input-hint">The brief is also sent to your inbox.</p>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submit-btn">Generate my brief</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Loading state -->
+  <div id="state-loading" class="state">
+    <div class="form-card">
+      <div class="loading-wrap">
+        <div class="spinner"></div>
+        <p class="loading-label">Researching your topic...</p>
+        <p class="loading-steps" id="loading-step">Running initial search</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result state -->
+  <div id="state-result" class="state">
+    <div id="result-notice" class="notice success">Brief ready.</div>
+
+    <div class="report-card" id="report-output"></div>
+
+    <div class="cta-block">
+      <p>Want to run this across your entire content strategy, not just one topic? That is what I do as a content operations consultant.</p>
+      <a href="https://marcodoria.consulting#contact" class="btn-outline">Let's talk</a>
+    </div>
+
+    <div class="run-again">
+      <button id="reset-btn">Run another brief</button>
+    </div>
+  </div>
+
+  <!-- Error state -->
+  <div id="state-error" class="state">
+    <div class="notice error" id="error-msg">Something went wrong. Please try again.</div>
+    <div class="run-again">
+      <button id="error-reset-btn">Try again</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  <a href="https://marcodoria.consulting" rel="noopener">Marco Doria</a> &middot;
+  <a href="https://www.iubenda.com/privacy-policy/93666200" target="_blank" rel="noopener">Privacy Policy</a> &middot;
+  <a href="https://www.iubenda.com/privacy-policy/93666200/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a> &middot;
+  <a href="#" onclick="_iub.cs.api.openPreferences(); return false;">Cookie preferences</a>
+</div>
+
+<script>
+  // Configure API endpoint (change for production)
+  const API_URL = 'https://research-brief-agent.onrender.com/generate';
+
+  const states = {
+    form:    document.getElementById('state-form'),
+    loading: document.getElementById('state-loading'),
+    result:  document.getElementById('state-result'),
+    error:   document.getElementById('state-error'),
+  };
+
+  function showState(name) {
+    Object.values(states).forEach(el => el.classList.remove('active'));
+    states[name].classList.add('active');
+  }
+
+  // Loading step cycling
+  const STEPS = [
+    'Running initial search...',
+    'Looking for expert perspectives...',
+    'Identifying market gaps...',
+    'Compiling source map...',
+    'Structuring the brief...',
+  ];
+  let stepTimer;
+
+  function startStepCycle() {
+    const el = document.getElementById('loading-step');
+    let i = 0;
+    el.textContent = STEPS[0];
+    stepTimer = setInterval(() => {
+      i = (i + 1) % STEPS.length;
+      el.textContent = STEPS[i];
+    }, 4000);
+  }
+
+  function stopStepCycle() {
+    clearInterval(stepTimer);
+  }
+
+  // Render brief from JSON
+  function renderBrief(brief) {
+    const s = brief.sections || {};
+    const out = document.getElementById('report-output');
+    const parts = [];
+
+    parts.push(`<div class="report-eyebrow">Research Brief</div>`);
+    parts.push(`<div class="report-topic">${esc(brief.topic)}</div>`);
+
+    if (s.snapshot) {
+      parts.push(`
+        <div class="report-section">
+          <div class="report-section-title">Topic Snapshot</div>
+          <p>${esc(s.snapshot)}</p>
+        </div>`);
+    }
+
+    if (s.claims && s.claims.length) {
+      const items = s.claims.map(c => {
+        const conf = c.confidence || 'medium';
+        const confLabel = { high: 'High', medium: 'Medium', low: 'Low' }[conf] || 'Medium';
+        const src = c.url
+          ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.source)}</a>`
+          : esc(c.source);
+        return `
+          <div class="claim-item">
+            <div class="claim-text">${esc(c.claim)}</div>
+            <div class="claim-meta">${src}<span class="confidence">${esc(confLabel)}</span></div>
+          </div>`;
+      }).join('');
+      parts.push(`
+        <div class="report-section">
+          <div class="report-section-title">Key Claims</div>
+          ${items}
+        </div>`);
+    }
+
+    if (s.gap) {
+      parts.push(`
+        <div class="report-section">
+          <div class="report-section-title">Market Gap</div>
+          <p>${esc(s.gap)}</p>
+        </div>`);
+    }
+
+    if (s.skeleton) {
+      const sk = s.skeleton;
+      const h2s = (sk.h2s || []).map(sec => {
+        const pts = (sec.points || []).map(p => `<li>${esc(p)}</li>`).join('');
+        return `
+          <div class="skeleton-section">
+            <div class="skeleton-heading">${esc(sec.heading)}</div>
+            <ul class="skeleton-points">${pts}</ul>
+          </div>`;
+      }).join('');
+      parts.push(`
+        <div class="report-section">
+          <div class="report-section-title">Content Skeleton</div>
+          <div class="skeleton-h1">${esc(sk.h1)}</div>
+          ${h2s}
+        </div>`);
+    }
+
+    if (s.sources && s.sources.length) {
+      const srcs = s.sources.map(src => {
+        const link = src.url
+          ? `<a href="${esc(src.url)}" target="_blank" rel="noopener">${esc(src.title)}</a>`
+          : esc(src.title);
+        return `
+          <div class="source-item">
+            ${link}
+            ${src.reliability ? `<div class="source-reliability">${esc(src.reliability)}</div>` : ''}
+          </div>`;
+      }).join('');
+      parts.push(`
+        <div class="report-section">
+          <div class="report-section-title">Source Map</div>
+          ${srcs}
+        </div>`);
+    }
+
+    out.innerHTML = parts.join('');
+  }
+
+  function esc(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // Form submit
+  document.getElementById('brief-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const topic = document.getElementById('topic').value.trim();
+
+    if (!topic) {
+      document.getElementById('topic').focus();
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      document.getElementById('email').focus();
+      return;
+    }
+
+    showState('loading');
+    startStepCycle();
+
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, topic }),
+      });
+
+      const data = await res.json();
+      stopStepCycle();
+
+      if (!res.ok || data.error) {
+        document.getElementById('error-msg').textContent = data.error || 'Something went wrong. Please try again.';
+        showState('error');
+        return;
+      }
+
+      const notice = document.getElementById('result-notice');
+      if (data.email_sent) {
+        notice.textContent = 'Brief ready. Check your inbox.';
+      } else {
+        notice.textContent = 'Brief ready.';
+      }
+
+      if (data.report) {
+        // No SMTP configured: parse Markdown and render inline
+        const brief = parseMarkdownBrief(data.report, topic);
+        renderBrief(brief);
+      } else if (data.brief) {
+        renderBrief(data.brief);
+      } else {
+        document.getElementById('report-output').innerHTML =
+          `<p style="color:var(--text-secondary);font-size:14px">Brief sent to ${esc(email)}.</p>`;
+      }
+
+      showState('result');
+      gtag('event', 'brief_generated', { topic: topic });
+
+    } catch (err) {
+      stopStepCycle();
+      document.getElementById('error-msg').textContent = 'Could not reach the server. Make sure the API is running.';
+      showState('error');
+    }
+  });
+
+  // Parse Markdown brief into structured object for renderBrief()
+  function parseMarkdownBrief(md, topicFallback) {
+    const lines = md.split('\n');
+    const brief = { topic: topicFallback, sections: {} };
+    let section = null;
+    let buffer = [];
+
+    const flush = () => {
+      if (!section) return;
+      const text = buffer.join('\n').trim();
+      if (section === 'snapshot') brief.sections.snapshot = text;
+      if (section === 'gap') brief.sections.gap = text;
+      buffer = [];
+    };
+
+    for (const line of lines) {
+      if (line.startsWith('# Research Brief:')) {
+        brief.topic = line.replace('# Research Brief:', '').trim();
+      } else if (line.startsWith('## Topic Snapshot')) {
+        flush(); section = 'snapshot';
+      } else if (line.startsWith('## Market Gap')) {
+        flush(); section = 'gap';
+      } else if (line.startsWith('## Key Claims')) {
+        flush(); section = 'claims'; brief.sections.claims = [];
+      } else if (line.startsWith('## Brief Skeleton')) {
+        flush(); section = 'skeleton'; brief.sections.skeleton = { h1: '', h2s: [] };
+      } else if (line.startsWith('## Source Map')) {
+        flush(); section = 'sources'; brief.sections.sources = [];
+      } else if (section === 'snapshot' || section === 'gap') {
+        if (line && !line.startsWith('#')) buffer.push(line);
+      } else if (section === 'claims') {
+        if (/^\d+\./.test(line)) {
+          brief.sections.claims.push({ claim: line.replace(/^\d+\.\s*/, '').replace(/\s{2}$/, ''), source: '', url: '', confidence: 'medium' });
+        } else if (/\*Source:/.test(line) && brief.sections.claims.length) {
+          const c = brief.sections.claims[brief.sections.claims.length - 1];
+          const m = line.match(/\[([^\]]+)\]\(([^)]+)\)/);
+          if (m) { c.source = m[1]; c.url = m[2]; }
+          const confM = line.match(/confidence:\s*(\w+)/i);
+          if (confM) c.confidence = confM[1].toLowerCase();
+        }
+      } else if (section === 'skeleton') {
+        if (line.startsWith('**Suggested H1:**')) {
+          brief.sections.skeleton.h1 = line.replace('**Suggested H1:**', '').trim();
+        } else if (line.startsWith('**') && line.endsWith('**')) {
+          brief.sections.skeleton.h2s.push({ heading: line.replace(/\*\*/g, '').trim(), points: [] });
+        } else if (line.startsWith('- ') && brief.sections.skeleton.h2s.length) {
+          brief.sections.skeleton.h2s[brief.sections.skeleton.h2s.length - 1].points.push(line.replace(/^- /, '').trim());
+        }
+      } else if (section === 'sources') {
+        if (line.startsWith('- [')) {
+          const m = line.match(/\[([^\]]+)\]\(([^)]+)\)/);
+          if (m) brief.sections.sources.push({ title: m[1], url: m[2], reliability: '' });
+        } else if (/^\s+\*/.test(line) && brief.sections.sources.length) {
+          brief.sections.sources[brief.sections.sources.length - 1].reliability = line.replace(/\s+\*|\*/g, '').trim();
+        }
+      }
+    }
+    flush();
+    return brief;
+  }
+
+  // Reset handlers
+  document.getElementById('reset-btn').addEventListener('click', () => {
+    document.getElementById('brief-form').reset();
+    document.getElementById('report-output').innerHTML = '';
+    showState('form');
+  });
+
+  document.getElementById('error-reset-btn').addEventListener('click', () => {
+    showState('form');
+  });
+</script>
+
+</body>
+</html>
