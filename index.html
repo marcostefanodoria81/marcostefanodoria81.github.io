@@ -206,6 +206,21 @@
 
     .nav-cv:hover { background: var(--accent-dim); }
 
+    .nav-tool {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .nav-tool:hover { color: var(--white); border-color: var(--muted); }
+
     /* HERO */
     .hero-wrap {
       position: relative;
@@ -820,6 +835,7 @@
       .nav-links { gap: 0.75rem; }
       .nav-links a { font-size: 0.68rem; letter-spacing: 0.04em; }
       .nav-cv { font-size: 0.68rem; padding: 0.25rem 0.6rem; letter-spacing: 0.04em; }
+      .nav-tool { display: none; }
       .nav-right { width: 100%; justify-content: space-between; }
       .hero { padding: 5rem 1.25rem 3rem; }
       .container { padding: 3rem 1.25rem; }
@@ -859,6 +875,7 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="cv.html" target="_blank" onclick="gtag('event', 'cv_view', {'button_location': 'nav'})">CV ↗</a></li>
       </ul>
+      <a href="/research-brief.html" class="nav-tool" onclick="gtag('event', 'research_brief_click', {'button_location': 'nav'})">Free brief tool ↗</a>
       <a href="#proof" class="nav-cv" onclick="gtag('event', 'proof_view', {'button_location': 'nav'})">See the proof</a>
     </div>
   </nav>
@@ -909,8 +926,8 @@
       </div>
       <div class="stat-card reveal reveal-delay-2">
         <div class="stat-num">Schedule adherence</div>
-        <div class="stat-value">22<span>/22</span></div>
-        <div class="stat-label">22 posts published on schedule since launch. The pipeline hasn't stalled once.</div>
+        <div class="stat-value">25<span>/25</span></div>
+        <div class="stat-label">25 posts published on schedule since launch. The pipeline hasn't stalled once.</div>
       </div>
     </div>
     <div class="contact-block reveal" style="margin-top: 2rem;">
@@ -1039,7 +1056,7 @@
   <section class="container" id="research-brief" aria-label="Free research brief tool">
     <div class="section-label">Try it now</div>
     <h2 class="section-title">A research brief on any content ops topic. Free.</h2>
-    <p class="section-sub">Enter a topic. In under a minute you get a structured brief: current state, key claims with sources, market gap, and a content skeleton ready to build from. Built with the same AI pipeline I use in client engagements.</p>
+    <p class="section-sub">Enter a topic. In about a minute you get a structured brief: current state, key claims with sources, market gap, and a content skeleton ready to build from. Built with the same AI pipeline I use in client engagements.</p>
     <div class="contact-block reveal" style="margin-top: 2rem;">
       <a href="/research-brief.html" class="btn-primary" onclick="gtag('event', 'research_brief_click', {'button_location': 'portfolio_section'})">Generate your free brief ↗</a>
     </div>
