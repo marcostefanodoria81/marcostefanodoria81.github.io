@@ -554,7 +554,7 @@
         </div>
 
         <button type="submit" class="btn-primary" id="submit-btn">Generate my brief</button>
-        <p style="font-size:12px;color:var(--text-secondary);text-align:center;margin-top:12px;">Your brief will appear on this page. Keep this tab open.</p>
+        <p style="font-size:12px;color:var(--text-secondary);text-align:center;margin-top:12px;">Your brief will appear here. A copy will also be sent to your inbox.</p>
       </form>
     </div>
   </div>
@@ -801,7 +801,7 @@
 
       const notice = document.getElementById('result-notice');
       if (data.email_sent) {
-        notice.textContent = 'Brief ready. Check your inbox.';
+        notice.textContent = 'Brief ready. A copy was also sent to your inbox.';
       } else {
         notice.textContent = 'Brief ready.';
       }
@@ -811,9 +811,6 @@
         renderBrief(brief);
       } else if (data.brief) {
         renderBrief(data.brief);
-      } else {
-        document.getElementById('report-output').innerHTML =
-          `<p style="color:var(--text-secondary);font-size:14px">Brief sent to ${esc(email)}.</p>`;
       }
 
       showState('result');
