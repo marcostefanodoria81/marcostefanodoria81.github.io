@@ -225,7 +225,7 @@
 
     /* FOOTER */
     .blog-footer {
-      max-width: 720px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 2rem 1.5rem;
       border-top: 1px solid var(--l-border);
@@ -259,6 +259,117 @@
     }
     .btn-ghost:hover { color: var(--l-text); border-color: var(--l-muted); }
 
+    /* BLOG CONTAINER — GRID CON SIDEBAR */
+    .blog-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      column-gap: 4rem;
+      align-items: start;
+    }
+
+    .blog-container .blog-header { grid-column: 1 / -1; }
+
+    .blog-main { min-width: 0; }
+
+    /* SIDEBAR */
+    .blog-sidebar {
+      position: sticky;
+      top: calc(54px + 2rem);
+      min-width: 0;
+    }
+
+    .sidebar-card {
+      background: var(--l-surface);
+      border: 1px solid var(--l-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sidebar-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .sidebar-card p {
+      font-size: 0.85rem;
+      color: var(--l-muted);
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+    }
+
+    .sidebar-card p:last-child { margin-bottom: 0; }
+
+    .author-row {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-bottom: 0.875rem;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--l-text);
+      line-height: 1.3;
+    }
+
+    .author-role {
+      font-size: 0.78rem;
+      color: var(--l-muted);
+    }
+
+    .sidebar-link {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .sidebar-link:hover { text-decoration: underline; }
+
+    @media (max-width: 860px) {
+      .blog-container {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+      }
+      .blog-sidebar {
+        position: static;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--l-border);
+        padding-bottom: 2rem;
+      }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 640px) {
       nav { padding: 0 1rem; }
@@ -288,7 +399,7 @@
   </nav>
 
   <main>
-    <div class="blog-wrap">
+    <div class="blog-container">
 
       <header class="blog-header">
         <div class="blog-header-label">The Brief</div>
@@ -296,34 +407,66 @@
         <p>Content operations, AI in editorial, and the data behind B2B content teams that actually work.</p>
       </header>
 
-      <div class="post-list" id="posts">
-        <!-- Post entries added below as they publish. Template: -->
-        <!--
-        <a href="/blog/slug.html" class="post-card">
-          <div class="post-meta">
-            <span class="post-category">Content Ops</span>
-            <span class="post-meta-sep"></span>
-            <span class="post-date">Oct 2026</span>
-            <span class="post-meta-sep"></span>
-            <span class="post-readtime">5 min read</span>
-          </div>
-          <h2>Article title here</h2>
-          <p class="post-excerpt">One-sentence excerpt that gives the reader enough to decide whether to click.</p>
-        </a>
-        -->
+      <div class="blog-main">
+        <div class="post-list" id="posts">
+          <!-- Post entries added below as they publish. Template: -->
+          <!--
+          <a href="/blog/slug.html" class="post-card">
+            <div class="post-meta">
+              <span class="post-category">Content Ops</span>
+              <span class="post-meta-sep"></span>
+              <span class="post-date">Oct 2026</span>
+              <span class="post-meta-sep"></span>
+              <span class="post-readtime">5 min read</span>
+            </div>
+            <h2>Article title here</h2>
+            <p class="post-excerpt">One-sentence excerpt that gives the reader enough to decide whether to click.</p>
+          </a>
+          -->
 
-        <a href="/blog/content-roi-ai-native-saas.html" class="post-card">
-          <div class="post-meta">
-            <span class="post-category">Data &amp; Research</span>
-            <span class="post-meta-sep"></span>
-            <span class="post-date">Oct 2026</span>
-            <span class="post-meta-sep"></span>
-            <span class="post-readtime">6 min read</span>
-          </div>
-          <h2>Measuring content ROI in AI-native SaaS: from GTM launch to first $10M ARR</h2>
-          <p class="post-excerpt">Traditional ROI frameworks assume 18-month cycles. AI-native SaaS hits $10M ARR in nine months. A 4-layer approach that starts measuring in weeks, not quarters.</p>
-        </a>
+          <a href="/blog/content-roi-ai-native-saas.html" class="post-card">
+            <div class="post-meta">
+              <span class="post-category">Data &amp; Research</span>
+              <span class="post-meta-sep"></span>
+              <span class="post-date">Oct 2026</span>
+              <span class="post-meta-sep"></span>
+              <span class="post-readtime">6 min read</span>
+            </div>
+            <h2>Measuring content ROI in AI-native SaaS: from GTM launch to first $10M ARR</h2>
+            <p class="post-excerpt">Traditional ROI frameworks assume 18-month cycles. AI-native SaaS hits $10M ARR in nine months. A 4-layer approach that starts measuring in weeks, not quarters.</p>
+          </a>
+        </div>
       </div>
+
+      <aside class="blog-sidebar">
+
+        <div class="sidebar-card">
+          <div class="sidebar-label">The Brief</div>
+          <p>Long-form on content operations, AI in editorial, and the data behind B2B content teams that actually work.</p>
+          <p>One post every two weeks. Analysis over opinion. Every number verified.</p>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-label">Author</div>
+          <div class="author-row">
+            <!-- Replace "MD" text with <img src="/path/to/photo.jpg" alt="Marco Doria"> when ready -->
+            <div class="author-avatar">MD</div>
+            <div>
+              <div class="author-name">Marco Doria</div>
+              <div class="author-role">Content Operations Consultant</div>
+            </div>
+          </div>
+          <p>Ten years in performance content. Publisher-side editorial at TechRadar and Tom's Hardware, then AI-assisted content ops. Based in Sicily, remote-native.</p>
+          <a href="/story.html" class="sidebar-link">Full story →</a>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-label">Work together</div>
+          <p>Content ops audit or fractional ops leadership for SaaS teams building at speed.</p>
+          <a href="https://calendly.com/marcostefanodoria/30min" target="_blank" rel="noopener" class="sidebar-link">Book a 30-min call →</a>
+        </div>
+
+      </aside>
 
     </div>
   </main>
