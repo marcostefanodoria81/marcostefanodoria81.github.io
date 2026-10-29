@@ -173,9 +173,22 @@
 
     /* ARTICLE HEADER */
     .article-header {
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid var(--l-border);
-      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      margin-bottom: 0;
+    }
+
+    .article-cover {
+      margin: 1.5rem 0 2.5rem;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--l-border);
+    }
+    .article-cover img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1200 / 600;
+      object-fit: cover;
+      object-position: center center;
     }
     .article-meta {
       display: flex;
@@ -404,6 +417,11 @@
         </div>
         <h1 class="article-title">Measuring content ROI in AI-native SaaS: from GTM launch to first $10M ARR</h1>
       </header>
+
+      <!-- Cover image -->
+      <div class="article-cover">
+        <img src="/images/content-roi-infographic.png" alt="Content ROI Framework — 4-layer measurement approach for AI-native SaaS">
+      </div>
 
       <!-- Article body -->
       <article class="article-body">
