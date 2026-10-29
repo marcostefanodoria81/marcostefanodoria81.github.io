@@ -8,6 +8,12 @@
 - [Fractional Content Operations](https://marcodoria.consulting/#work-with-me): Ongoing editorial ops leadership without a full-time hire. Workflow governance, editorial QA, brief templates, performance tracking.
 - [Content Intelligence](https://marcodoria.consulting/#work-with-me): Biweekly digest of content opportunities — trending topics, competitor gaps, community signals, search demand shifts.
 
+## The Brief (blog)
+
+Long-form on content operations, AI in editorial, and the data behind B2B content teams that actually work.
+
+- [Measuring content ROI in AI-native SaaS: from GTM launch to first $10M ARR](https://marcodoria.consulting/blog/content-roi-ai-native-saas.html): Why traditional content ROI frameworks fail AI-native SaaS companies, and a 4-layer measurement approach that starts in weeks, not quarters.
+
 ## Background
 
 - [The full story](https://marcodoria.consulting/story.html): Ten years in content — from translation to publisher-side editorial to AI-assisted content operations.

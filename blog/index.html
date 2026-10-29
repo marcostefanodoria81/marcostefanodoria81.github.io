@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Brief — Marco Doria</title>
+  <meta name="description" content="Long-form on content operations, AI in editorial, and the numbers behind B2B content at scale. By Marco Doria.">
+  <link rel="canonical" href="https://marcodoria.consulting/blog/">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff6b1a'/><text x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ178J7050"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WJ178J7050');
+  </script>
+
+  <!-- Fonts: Inter for body readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:        #080808;
+      --dark:         #101010;
+      --border:       #242424;
+      --border-hover: #383838;
+      --muted:        #909090;
+      --accent:       #ff6b1a;
+      --accent-dim:   rgba(255,107,26,0.10);
+      --accent-border:rgba(255,107,26,0.30);
+      --white:        #ffffff;
+      --radius:       10px;
+      --radius-sm:    6px;
+
+      /* Light tokens for blog body */
+      --l-bg:      #ffffff;
+      --l-surface: #f6f6f6;
+      --l-border:  #e8e8e8;
+      --l-text:    #131313;
+      --l-muted:   #6b6b6b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: var(--l-bg);
+      color: var(--l-text);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV — dark, identical to main site */
+    nav:not(.breadcrumb) {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 54px;
+      background: rgba(8,8,8,0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-logo:hover { color: var(--white); }
+
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] { color: var(--white); }
+
+    .nav-tool {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-tool:hover { color: var(--white); border-color: var(--muted); }
+
+    /* BLOG LAYOUT */
+    .blog-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* PAGE HEADER */
+    .blog-header {
+      padding: 7rem 0 3rem;
+      border-bottom: 1px solid var(--l-border);
+      margin-bottom: 3rem;
+    }
+
+    .blog-header-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--l-text);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-header p {
+      font-size: 1rem;
+      color: var(--l-muted);
+      line-height: 1.6;
+      max-width: 540px;
+    }
+
+    /* POST LIST */
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .post-card {
+      display: block;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--l-border);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.15s;
+    }
+    .post-card:hover { opacity: 0.75; }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .post-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .post-meta-sep {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--l-border);
+    }
+
+    .post-date {
+      font-size: 0.78rem;
+      color: var(--l-muted);
+    }
+
+    .post-readtime {
+      font-size: 0.78rem;
+      color: var(--l-muted);
+    }
+
+    .post-card h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--l-text);
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-excerpt {
+      font-size: 0.9rem;
+      color: var(--l-muted);
+      line-height: 1.6;
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      padding: 3rem 0;
+      color: var(--l-muted);
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    .blog-footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--l-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-left {
+      font-size: 0.82rem;
+      color: var(--l-muted);
+      line-height: 1.6;
+    }
+
+    .footer-left strong { color: var(--l-text); font-weight: 600; }
+
+    .btn-ghost {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--l-muted);
+      text-decoration: none;
+      border: 1px solid var(--l-border);
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--l-text); border-color: var(--l-muted); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links li:not(:nth-last-child(-n+3)) { display: none; }
+      .nav-logo { display: none; }
+      .nav-right { width: 100%; justify-content: space-between; }
+      .blog-header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Main navigation">
+    <a href="/" class="nav-logo">Marco Doria</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/#pitch">Perspective</a></li>
+        <li><a href="/#how-it-works">The system</a></li>
+        <li><a href="/#experience">Background</a></li>
+        <li><a href="/story.html">My story</a></li>
+        <li><a href="/blog/" aria-current="page">The Brief</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+      </ul>
+      <a href="/research-brief.html" class="nav-tool">Free brief tool ↗</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="blog-wrap">
+
+      <header class="blog-header">
+        <div class="blog-header-label">The Brief</div>
+        <h1>Long-form on content at scale</h1>
+        <p>Content operations, AI in editorial, and the data behind B2B content teams that actually work.</p>
+      </header>
+
+      <div class="post-list" id="posts">
+        <!-- Post entries added below as they publish. Template: -->
+        <!--
+        <a href="/blog/slug.html" class="post-card">
+          <div class="post-meta">
+            <span class="post-category">Content Ops</span>
+            <span class="post-meta-sep"></span>
+            <span class="post-date">Oct 2026</span>
+            <span class="post-meta-sep"></span>
+            <span class="post-readtime">5 min read</span>
+          </div>
+          <h2>Article title here</h2>
+          <p class="post-excerpt">One-sentence excerpt that gives the reader enough to decide whether to click.</p>
+        </a>
+        -->
+
+        <a href="/blog/content-roi-ai-native-saas.html" class="post-card">
+          <div class="post-meta">
+            <span class="post-category">Data &amp; Research</span>
+            <span class="post-meta-sep"></span>
+            <span class="post-date">Oct 2026</span>
+            <span class="post-meta-sep"></span>
+            <span class="post-readtime">6 min read</span>
+          </div>
+          <h2>Measuring content ROI in AI-native SaaS: from GTM launch to first $10M ARR</h2>
+          <p class="post-excerpt">Traditional ROI frameworks assume 18-month cycles. AI-native SaaS hits $10M ARR in nine months. A 4-layer approach that starts measuring in weeks, not quarters.</p>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="blog-footer">
+    <div class="footer-left">
+      <strong>Marco Stefano Doria</strong><br>
+      Sicily, Italy · Remote-native<br>
+      <span style="font-size:0.75rem;">
+        <a href="https://www.iubenda.com/privacy-policy/93666200" target="_blank" rel="noopener" style="color:var(--l-muted);text-decoration:underline;">Privacy Policy</a>
+        ·
+        <a href="https://www.iubenda.com/privacy-policy/93666200/cookie-policy" target="_blank" rel="noopener" style="color:var(--l-muted);text-decoration:underline;">Cookie Policy</a>
+      </span>
+    </div>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <a href="https://calendly.com/marcostefanodoria/30min" target="_blank" rel="noopener" class="cta-btn" onclick="gtag('event','calendly_click',{'button_location':'blog_footer'})">Book a 30-min call →</a>
+      <a href="https://www.linkedin.com/in/marcostefanodoria/" target="_blank" rel="noopener" class="btn-ghost">Connect on LinkedIn ↗</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- EDIT: title, description, canonical, date, category -->
+  <title>ARTICLE TITLE — Marco Doria</title>
+  <meta name="description" content="ARTICLE DESCRIPTION (150 chars max).">
+  <link rel="canonical" href="https://marcodoria.consulting/blog/SLUG.html">
+
+  <!-- OG / social -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ARTICLE TITLE">
+  <meta property="og:description" content="ARTICLE DESCRIPTION">
+  <meta property="og:url" content="https://marcodoria.consulting/blog/SLUG.html">
+  <meta property="og:image" content="https://marcodoria.consulting/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff6b1a'/><text x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ178J7050"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WJ178J7050');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:         #080808;
+      --border-dark:   #242424;
+      --muted-dark:    #909090;
+      --accent:        #ff6b1a;
+      --accent-dim:    rgba(255,107,26,0.10);
+      --accent-border: rgba(255,107,26,0.25);
+      --white:         #ffffff;
+      --radius-sm:     6px;
+
+      /* Light — blog body */
+      --l-bg:      #ffffff;
+      --l-surface: #f6f6f6;
+      --l-border:  #e8e8e8;
+      --l-text:    #131313;
+      --l-muted:   #6b6b6b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: var(--l-bg);
+      color: var(--l-text);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV — dark */
+    nav:not(.breadcrumb) {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 54px;
+      background: rgba(8,8,8,0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .nav-logo {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--muted-dark);
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-logo:hover { color: var(--white); }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.75rem;
+      color: var(--muted-dark);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] { color: var(--white); }
+    .nav-tool {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+      text-decoration: none;
+      border: 1px solid var(--border-dark);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-tool:hover { color: var(--white); border-color: var(--muted-dark); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 6.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .breadcrumb a {
+      font-size: 0.78rem;
+      color: var(--l-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: var(--l-text); }
+    .breadcrumb-sep {
+      font-size: 0.78rem;
+      color: var(--l-border);
+    }
+    .breadcrumb-current {
+      font-size: 0.78rem;
+      color: var(--l-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 240px;
+    }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--l-border);
+      margin-bottom: 2.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .article-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+    .meta-sep {
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: var(--l-border);
+    }
+    .article-date,
+    .article-readtime {
+      font-size: 0.8rem;
+      color: var(--l-muted);
+    }
+    .article-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--l-text);
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+
+    /* ARTICLE BODY */
+    .article-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--l-text);
+    }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--l-text);
+      line-height: 1.35;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-body h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--l-text);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-body ul,
+    .article-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-body li { margin-bottom: 0.4rem; }
+    .article-body strong { font-weight: 600; color: var(--l-text); }
+    .article-body em { font-style: italic; }
+    .article-body a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .article-body a:hover { opacity: 0.8; }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 0 0.75rem 1.25rem;
+      color: var(--l-muted);
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--l-border);
+      margin: 2.5rem 0;
+    }
+
+    /* DATA CALLOUT — for posts with job market data */
+    .data-callout {
+      background: var(--l-surface);
+      border: 1px solid var(--l-border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: var(--l-muted);
+      line-height: 1.6;
+    }
+    .data-callout strong { color: var(--l-text); }
+
+    /* CTA — brief tool */
+    .article-cta {
+      background: var(--l-surface);
+      border: 1px solid var(--l-border);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin-top: 3rem;
+    }
+    .article-cta-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .article-cta h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--l-text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .article-cta p {
+      font-size: 0.88rem;
+      color: var(--l-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--accent);
+      text-decoration: none;
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-sm);
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+
+    /* FOOTER */
+    .article-footer {
+      max-width: 680px;
+      margin: 3rem auto 0;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--l-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-left {
+      font-size: 0.82rem;
+      color: var(--l-muted);
+      line-height: 1.6;
+    }
+    .footer-left strong { color: var(--l-text); font-weight: 600; }
+    .btn-ghost {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--l-muted);
+      text-decoration: none;
+      border: 1px solid var(--l-border);
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--l-text); border-color: var(--l-muted); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links li:not(:nth-last-child(-n+3)) { display: none; }
+      .nav-logo { display: none; }
+      .nav-right { width: 100%; justify-content: space-between; }
+      .article-title { font-size: 1.5rem; }
+      .article-cta { padding: 1.25rem; }
+    }
+  </style>
+
+  <!-- Reading time: auto-calculated from article body -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var body = document.querySelector('.article-body');
+      var el = document.querySelector('.article-readtime');
+      if (!body || !el) return;
+      var words = body.innerText.trim().split(/\s+/).length;
+      var mins = Math.max(1, Math.round(words / 200));
+      el.textContent = mins + ' min read';
+    });
+  </script>
+</head>
+<body>
+
+  <nav aria-label="Main navigation">
+    <a href="/" class="nav-logo">Marco Doria</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/#pitch">Perspective</a></li>
+        <li><a href="/#how-it-works">The system</a></li>
+        <li><a href="/#experience">Background</a></li>
+        <li><a href="/story.html">My story</a></li>
+        <li><a href="/blog/" aria-current="page">The Brief</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+      </ul>
+      <a href="/research-brief.html" class="nav-tool">Free brief tool ↗</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="article-wrap">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/blog/">The Brief</a>
+        <span class="breadcrumb-sep">›</span>
+        <!-- EDIT: article title shortened if needed -->
+        <span class="breadcrumb-current">ARTICLE TITLE SHORT</span>
+      </nav>
+
+      <!-- Article header -->
+      <header class="article-header">
+        <div class="article-meta">
+          <!-- EDIT: category — one of: Content Ops / AI & Editorial / Data & Research -->
+          <span class="article-category">Content Ops</span>
+          <span class="meta-sep"></span>
+          <!-- EDIT: date in format "Month YYYY" -->
+          <span class="article-date">October 2026</span>
+          <span class="meta-sep"></span>
+          <span class="article-readtime"><!-- auto --></span>
+        </div>
+        <!-- EDIT: full article title -->
+        <h1 class="article-title">ARTICLE TITLE</h1>
+      </header>
+
+      <!-- Article body — write here -->
+      <article class="article-body">
+
+        <p>INTRO PARAGRAPH.</p>
+
+        <h2>Section heading</h2>
+
+        <p>Body paragraph.</p>
+
+        <!-- Data callout example:
+        <div class="data-callout">
+          <strong>From the data:</strong> across 200 EU job listings scanned in October 2026,
+          64% of Head of Content roles required explicit AI workflow experience. In June 2026,
+          that number was 41%.
+        </div>
+        -->
+
+        <hr>
+
+        <p>CLOSING PARAGRAPH.</p>
+
+      </article>
+
+      <!-- CTA -->
+      <aside class="article-cta">
+        <div class="article-cta-label">Free tool</div>
+        <h3>Get a research brief on any content ops topic</h3>
+        <p>Enter a topic and get a structured brief in under 60 seconds. Used by content leads at B2B SaaS companies to cut brief prep time by half.</p>
+        <a href="/research-brief.html" class="cta-btn">Try the brief tool ↗</a>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="article-footer">
+    <div class="footer-left">
+      <strong>Marco Stefano Doria</strong><br>
+      Sicily, Italy · Remote-native<br>
+      <span style="font-size:0.75rem;">
+        <a href="https://www.iubenda.com/privacy-policy/93666200" target="_blank" rel="noopener" style="color:var(--l-muted);text-decoration:underline;">Privacy Policy</a>
+        ·
+        <a href="https://www.iubenda.com/privacy-policy/93666200/cookie-policy" target="_blank" rel="noopener" style="color:var(--l-muted);text-decoration:underline;">Cookie Policy</a>
+      </span>
+    </div>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <a href="https://calendly.com/marcostefanodoria/30min" target="_blank" rel="noopener" class="cta-btn" onclick="gtag('event','calendly_click',{'button_location':'blog_footer'})">Book a 30-min call →</a>
+      <a href="https://www.linkedin.com/in/marcostefanodoria/" target="_blank" rel="noopener" class="btn-ghost">Connect on LinkedIn ↗</a>
+    </div>
+  </footer>
+
+</body>
+</html>
