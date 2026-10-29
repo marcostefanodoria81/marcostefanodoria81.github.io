@@ -1,0 +1,340 @@
+<title>Content ROI Framework</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Single-theme light infographic — screenshot at 1200×720 */
+:root {
+  --bg-outer:      #e4e4e4;
+  --bg:            #ffffff;
+  --surface:       #f6f6f6;
+  --border:        #e8e8e8;
+  --border-mid:    #d4d4d4;
+  --accent:        #ff6b1a;
+  --accent-bg:     rgba(255,107,26,0.07);
+  --accent-border: rgba(255,107,26,0.28);
+  --fg:            #111111;
+  --fg-mid:        #555555;
+  --fg-muted:      #9a9a9a;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-outer);
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: max(24px, env(safe-area-inset-top, 0px)) max(24px, env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* CARD — 5:3 ratio gives more vertical room */
+.card {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 1200 / 720;
+  background: var(--bg);
+  border: 1px solid var(--border-mid);
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+  background-image:
+    radial-gradient(ellipse 90% 70% at 50% 110%, rgba(255,107,26,0.05) 0%, transparent 65%);
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: clamp(32px, 4.5%, 38px);
+  padding: 0 clamp(24px, 3.5%, 48px);
+  border-bottom: 1px solid var(--border);
+}
+.top-cat {
+  font-size: clamp(9px, 0.75vw, 10px);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.top-blog {
+  font-size: clamp(9px, 0.75vw, 10px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* HEADER — headline + pull quote */
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: clamp(24px, 3%, 48px);
+  padding: clamp(22px, 3%, 36px) clamp(24px, 3.5%, 48px) clamp(18px, 2.5%, 28px);
+  border-bottom: 1px solid var(--border);
+}
+.h-left { display: flex; flex-direction: column; gap: clamp(7px, 0.9%, 11px); }
+
+.eyebrow {
+  font-size: clamp(9px, 0.7vw, 9.5px);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.headline {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.7vw, 34px);
+  line-height: 1.2;
+  color: var(--fg);
+  text-wrap: balance;
+}
+.headline strong { color: var(--accent); font-weight: 800; }
+
+.pull {
+  font-size: clamp(10px, 0.88vw, 12px);
+  color: var(--fg-muted);
+  line-height: 1.65;
+  max-width: 300px;
+  text-align: right;
+}
+
+/* CONTRAST — two big numbers */
+.contrast {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(16px, 2%, 32px);
+  padding: clamp(14px, 2%, 22px) clamp(24px, 3.5%, 48px);
+  border-bottom: 1px solid var(--border);
+}
+
+.c-group {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(10px, 1.2%, 16px);
+}
+.c-group.r { justify-content: flex-end; }
+
+.c-n {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(42px, 5.2vw, 64px);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.c-n.dim { color: #aaaaaa; }
+.c-n.hot { color: var(--accent); }
+
+.c-label {
+  font-size: clamp(9px, 0.72vw, 10px);
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+.c-group.r .c-label { text-align: right; }
+
+.c-vs {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-size: clamp(11px, 1vw, 14px);
+  font-weight: 700;
+  color: var(--border-mid);
+  text-align: center;
+}
+
+/* LAYERS — 4 equal columns, fills remaining height */
+.layers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(10px, 1.2%, 16px);
+  padding: clamp(14px, 2%, 22px) clamp(24px, 3.5%, 48px);
+}
+
+.layer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: clamp(18px, 2.2%, 28px) clamp(14px, 1.6%, 18px) clamp(14px, 1.6%, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(5px, 0.7%, 8px);
+}
+.layer.l4 {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+
+.l-num {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1;
+  color: #bbbbbb;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(4px, 0.6%, 8px);
+}
+.l4 .l-num { color: rgba(255,107,26,0.40); }
+
+.l-name {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(12px, 1.1vw, 14px);
+  color: var(--fg);
+  line-height: 1.25;
+}
+
+.l-time {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: clamp(8px, 0.65vw, 9px);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+
+.l-rule {
+  width: 20px;
+  height: 1px;
+  background: var(--border-mid);
+  margin: clamp(2px, 0.3%, 4px) 0;
+}
+.l4 .l-rule { background: var(--accent-border); }
+
+.l-metrics {
+  font-size: clamp(9px, 0.76vw, 10.5px);
+  color: var(--fg-muted);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* BOTTOM BAR */
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: clamp(30px, 4%, 36px);
+  padding: 0 clamp(24px, 3.5%, 48px);
+  border-top: 1px solid var(--border);
+}
+.b-url, .b-date {
+  font-size: clamp(9px, 0.72vw, 10px);
+  color: var(--fg-muted);
+  letter-spacing: 0.03em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 720px) {
+  .card { aspect-ratio: auto; }
+  .header { grid-template-columns: 1fr; }
+  .pull { text-align: left; max-width: none; }
+  .contrast { grid-template-columns: 1fr 1fr; }
+  .c-vs { display: none; }
+  .c-group.r { justify-content: flex-start; }
+  .layers { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+
+<div class="card">
+
+  <div class="top-bar">
+    <span class="top-cat">Data &amp; Research</span>
+    <span class="top-blog">The Brief &middot; marcodoria.consulting</span>
+  </div>
+
+  <div class="header">
+    <div class="h-left">
+      <div class="eyebrow">AI-native SaaS &middot; Content Operations</div>
+      <h1 class="headline">Measuring content ROI<br>when GTM moves at <strong>3&times; the usual speed</strong></h1>
+    </div>
+    <p class="pull">Content break-even hits at month seven in both cases. The framework doesn't break. The timeline it runs on does.</p>
+  </div>
+
+  <div class="contrast">
+    <div class="c-group">
+      <span class="c-n dim">18</span>
+      <span class="c-label">months<br>Traditional SaaS<br>to first $10M ARR</span>
+    </div>
+    <span class="c-vs">vs</span>
+    <div class="c-group r">
+      <span class="c-label r">months<br>AI-native SaaS<br>to first $10M ARR</span>
+      <span class="c-n hot">9</span>
+    </div>
+  </div>
+
+  <div class="layers">
+
+    <div class="layer">
+      <div class="l-num">01</div>
+      <div class="l-name">Engagement velocity</div>
+      <div class="l-time">Weeks 1&ndash;8</div>
+      <div class="l-rule"></div>
+      <div class="l-metrics">
+        <span>Scroll depth</span>
+        <span>Return visit rate</span>
+        <span>Time-to-first-signal</span>
+      </div>
+    </div>
+
+    <div class="layer">
+      <div class="l-num">02</div>
+      <div class="l-name">Attribution signals</div>
+      <div class="l-time">Months 2&ndash;4</div>
+      <div class="l-rule"></div>
+      <div class="l-metrics">
+        <span>Dark social tracking</span>
+        <span>Content-assisted pipeline</span>
+        <span>UTM cohorts</span>
+      </div>
+    </div>
+
+    <div class="layer">
+      <div class="l-num">03</div>
+      <div class="l-name">Pipeline influence</div>
+      <div class="l-time">Months 4&ndash;7</div>
+      <div class="l-rule"></div>
+      <div class="l-metrics">
+        <span>Content-touched deal rate</span>
+        <span>Deal velocity delta</span>
+        <span>CAC contribution</span>
+      </div>
+    </div>
+
+    <div class="layer l4">
+      <div class="l-num">04</div>
+      <div class="l-name">AI citation rate</div>
+      <div class="l-time">Month 6+</div>
+      <div class="l-rule"></div>
+      <div class="l-metrics">
+        <span>Brand mentions in AI responses</span>
+        <span>Query-to-citation mapping</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-bar">
+    <span class="b-url">marcodoria.consulting/blog/content-roi-ai-native-saas.html</span>
+    <span class="b-date">October 2026</span>
+  </div>
+
+</div>
